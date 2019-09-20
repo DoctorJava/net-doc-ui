@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<title>Net Doc</title>
+	<script type="text/javascript" src="js/data.js"></script>
+	<script type="text/javascript" src="js/templates/servlet.js"></script>
+	<script type="text/javascript" src="js/templates/service.js"></script>
+	<script type="text/javascript" src="js/templates/connection.js"></script>
+	<script type="text/javascript" src="js/templates/socket.js"></script>
+	
+	<link rel="stylesheet" href="netdoc.css">
+<body>
+    <h1><center>Net Doc Report</center></h1>
+
+	<div id="app"></div>
+	
+	<script>
+
+		document.getElementById("app").innerHTML = `
+		  <h1>Servlets</h1>
+				<ul>
+					${servlets.map(servletTemplate).join("")}
+				</ul>
+		  <h1>Web Services</h1>
+				<ul>
+					${services.map(serviceTemplate).join("")}
+				</ul>
+		  <h1>Net Connections</h1>
+				<ul>
+					${connections.map(connectionTemplate).join("")}
+				</ul>
+		  <h1>Web Sockets</h1>
+				<ul>
+					${sockets.map(socketTemplate).join("")}
+				</ul>
+		`;
+		
+	</script>
+	
+	Done
+	
+</body>
