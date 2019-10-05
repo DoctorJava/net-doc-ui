@@ -24,34 +24,46 @@
 
 
 function showMethods(methods){
-	if ( !methods ) return ``;
-	return `
-		<p><strong>Methods: </strong>
-				${methods.map(method => ` ${method.verb} ( ${method.params.map(param => `${param} `).join("")} ), `).join("")}		
-		</p>
-	`;
+	// TODO: 
+	// This threw an erro when method.params was null.  Not sure how to add IF_NULL statement
+	// ${methods.map(method => ` ${method.verb} ( ${method.params.map(param => `${param} `).join("")} ), `).join("")}	
+
+
+	if ( methods ){
+		return `
+			<p><strong>Methods: </strong>
+					${methods.map(method => ` ${method.verb} ), `).join("")}		
+			</p>
+		`;		
+	}
+
 }
 
 function showPatterns(patterns){
-	if ( !patterns ) return ``;
-	return `
-		<p><strong>URL Patterns: </strong>
-			${patterns.map(pattern => ` ${pattern.path} `).join("")}		
-		</p>
-	`;
+	if ( patterns ){
+		return `
+			<p><strong>URL Patterns: </strong>
+				${patterns.map(pattern => ` ${pattern.path} `).join("")}		
+			</p>
+		`;
+	}
+
 }
 
 function connectionTemplate(connection) {
-	return `
-		<li>
-			<h2>${connection.className}</h2>
-			<p><strong>Package: </strong>${connection.packageName}</p>
-			<p><strong>Types:</strong>
-				${connection.hasUrlConnection ?  'UrlConnection, ' : ''}
-				${connection.hasSockets ?  'Sockets, ' : ''}
-				${connection.hasServerSockets ?  'Server Sockets, ' : ''}
-			</p>
-		</li>
-		<hr/> 
-	`;
+	if ( connection ) {
+		return `
+			<li>
+				<h2>${connection.className}</h2>
+				<p><strong>Package: </strong>${connection.packageName}</p>
+				<p><strong>Types:</strong>
+					${connection.hasUrlConnection ?  'UrlConnection, ' : ''}
+					${connection.hasSockets ?  'Sockets, ' : ''}
+					${connection.hasServerSockets ?  'Server Sockets, ' : ''}
+				</p>
+			</li>
+			<hr/> 
+		`;
+	}
+
 }

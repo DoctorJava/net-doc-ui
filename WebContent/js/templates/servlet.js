@@ -61,13 +61,16 @@ function showPatterns(patterns){
 	`;
 }
 function servletTemplate(servlet) {
-	return `
-		<li>
-			<h2>${servlet.className}</h2>
-			<p><strong>Package: </strong>${servlet.packageName}</p>
-			<p><strong>Methods: </strong>${servlet.methods}</p>
-			${showPatterns(servlet.urlPatterns)}
-		</li>
-		<hr/> 
-	`;
+        if (servlet){
+                return `
+                        <li>
+                                <h2>${servlet.className}</h2>
+                                <p><strong>Package: </strong>${servlet.packageName}</p>
+                                <p><strong>Methods: </strong>${servlet.methods}</p>
+                                ${showPatterns(servlet.urlPatterns)}
+                        </li>
+                        <hr/> 
+                `;
+        }
+
 }

@@ -61,13 +61,15 @@ function showPatterns(patterns){
 }
 
 function serviceTemplate(service) {
-	return `
-		<li>
-			<h2>${service.className}</h2>
-			<p><strong>Package: </strong>${service.packageName}</p>
-			${showMethods(service.methods)}
-			${showPatterns(service.urlPatterns)}
-		</li>
-		<hr/> 
-	`;
+    if (service){
+		return `
+			<li>
+				<h2>${service.className}</h2>
+				<p><strong>Package: </strong>${service.packageName}</p>
+				${showMethods(service.methods)}
+				${showPatterns(service.urlPatterns)}
+			</li>
+			<hr/> 
+		`;
+	}
 }

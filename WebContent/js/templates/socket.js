@@ -24,12 +24,15 @@ function showEndpoints(endpoints){
 }
 
 function socketTemplate(socket) {
-	return `
-		<li>
-			<h2>${socket.className}</h2>
-			<p><strong>Package: </strong>${socket.packageName}</p>
-			${showEndpoints(socket.endpoints)}
-		</li>
-		<hr/> 
-	`;
+	if ( socket ) {
+		return `
+			<li>
+				<h2>${socket.className}</h2>
+				<p><strong>Package: </strong>${socket.packageName}</p>
+				${showEndpoints(socket.endpoints)}
+			</li>
+			<hr/> 
+		`;
+	}	
+
 }
