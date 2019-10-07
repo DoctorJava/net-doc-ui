@@ -14,7 +14,7 @@
 
 
 
-function showEndpoints(endpoints){
+function showSocketEndpoints(endpoints){
 	if ( !endpoints ) return ``;
 	return `
 		<p><strong>Endpoints: </strong>
@@ -29,7 +29,7 @@ function socketTemplate(socket) {
 			<li>
 				<h2>${socket.className}</h2>
 				<p><strong>Package: </strong>${socket.packageName}</p>
-				${showEndpoints(socket.endpoints)}
+				${showSocketEndpoints(socket.endpoints)}
 			</li>
 			<hr/> 
 		`;

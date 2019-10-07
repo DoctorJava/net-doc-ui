@@ -42,16 +42,17 @@
     // ]
 
 
-function showMethods(methods){
+function showServiceMethods(methods){
 	if ( !methods ) return ``;
+				//${methods.map(method => ` ${method.verb} ( ${method.params.map(param => `${param} `).join("")}, `).join("")}		
 	return `
 		<p><strong>Methods: </strong>
-				${methods.map(method => ` ${method.verb} ( ${method.params.map(param => `${param} `).join("")} ), `).join("")}		
+				${methods.map(method => ` ${method.verb} ,` ).join("")}		
 		</p>
 	`;
 }
 
-function showPatterns(patterns){
+function showServicePatterns(patterns){
 	if ( !patterns ) return ``;
 	return `
 		<p><strong>URL Patterns: </strong>
@@ -66,8 +67,8 @@ function serviceTemplate(service) {
 			<li>
 				<h2>${service.className}</h2>
 				<p><strong>Package: </strong>${service.packageName}</p>
-				${showMethods(service.methods)}
-				${showPatterns(service.urlPatterns)}
+				${showServiceMethods(service.methods)}
+				${showServicePatterns(service.urlPatterns)}
 			</li>
 			<hr/> 
 		`;

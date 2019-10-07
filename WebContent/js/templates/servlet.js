@@ -52,7 +52,7 @@
         //     ]
         // }
 	
-function showPatterns(patterns){
+function showServletPatterns(patterns){
 	if ( !patterns ) return ``;
 	return `
 		<p><strong>URL Patterns: </strong>
@@ -67,7 +67,7 @@ function servletTemplate(servlet) {
                                 <h2>${servlet.className}</h2>
                                 <p><strong>Package: </strong>${servlet.packageName}</p>
                                 <p><strong>Methods: </strong>${servlet.methods}</p>
-                                ${showPatterns(servlet.urlPatterns)}
+                                ${showServletPatterns(servlet.urlPatterns)}
                         </li>
                         <hr/> 
                 `;

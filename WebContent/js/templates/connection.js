@@ -23,7 +23,7 @@
     // ],
 
 
-function showMethods(methods){
+function showConnectionMethods(methods){
 	// TODO: 
 	// This threw an erro when method.params was null.  Not sure how to add IF_NULL statement
 	// ${methods.map(method => ` ${method.verb} ( ${method.params.map(param => `${param} `).join("")} ), `).join("")}	
@@ -39,7 +39,7 @@ function showMethods(methods){
 
 }
 
-function showPatterns(patterns){
+function showConnectionPatterns(patterns){
 	if ( patterns ){
 		return `
 			<p><strong>URL Patterns: </strong>
