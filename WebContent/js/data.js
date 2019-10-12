@@ -4,4 +4,74 @@
  ]; 
  const info = {"title":"MyAppName","version":"0.2"}; 
  const sockets = []; 
- const services = [{"urlPatterns":[{"config":"Annotation","path":"org.springframework.web.bind.annotation.RestController"}],"type":"JEE_REST","className":"GreetingController","packageName":"hello","methods":[{"verb":"GET","params":null,"method":"[\"/defaultMapping\"]"},{"verb":"HEAD","params":null,"method":"[\"/defaultMapping\"]"},{"verb":"POST","params":null,"method":"[\"/defaultMapping\"]"},{"verb":"PUT","params":null,"method":"[\"/defaultMapping\"]"},{"verb":"PATCH","params":null,"method":"[\"/defaultMapping\"]"},{"verb":"DELETE","params":null,"method":"[\"/defaultMapping\"]"},{"verb":"OPTIONS","params":null,"method":"[\"/defaultMapping\"]"},{"verb":"TRACE","params":null,"method":"[\"/defaultMapping\"]"},{"verb":"GET","params":null,"method":"[\"/singleMethod\"]"},{"verb":"GET","params":null,"method":"[\"/multipleMethods\"]"},{"verb":"POST","params":null,"method":"[\"/multipleMethods\"]"}]}]
+ const services = [
+		{
+			"urlPatterns": [
+				{
+					"config": "Annotation",
+					"path": "org.springframework.web.bind.annotation.RestController"
+				}
+			],
+			"type": "JEE_REST",
+			"className": "GreetingController",
+			"packageName": "hello",
+			"methods": [
+				{
+					"urlPatterns": [
+						"[\"/defaultMappingUrl\"]"
+					],
+					"verb": "class net.jakartaee.tools.netdoc.detectors.SpringServiceDetector$mappingPREFIX",
+					"params": null,
+					"method": null
+				},
+				{
+					"urlPatterns": [
+						"[\"/singleMethodUrl\"]"
+					],
+					"verb": "GET",
+					"params": null,
+					"method": null
+				},
+				{
+					"urlPatterns": [
+						"[\"/getMappingUrl\"]"
+					],
+					"verb": "class net.jakartaee.tools.netdoc.detectors.SpringServiceDetector$mappingPREFIX",
+					"params": null,
+					"method": null
+				},
+				{
+					"urlPatterns": [
+						"[\"/multiMethodMappingUrl\"]"
+					],
+					"verb": "GET",
+					"params": null,
+					"method": null
+				},
+				{
+					"urlPatterns": [
+						"[\"/multiMethodMappingUrl\"]"
+					],
+					"verb": "POST",
+					"params": null,
+					"method": null
+				},
+				{
+					"urlPatterns": [
+						"[\"multiValueMappingUrl1\", \"multiValueMappingUrl2\"]"
+					],
+					"verb": "class net.jakartaee.tools.netdoc.detectors.SpringServiceDetector$mappingPREFIX",
+					"params": null,
+					"method": null
+				},
+				{
+					"urlPatterns": [
+						"[\"/multiParamMappingUrl\"]"
+					],
+					"verb": "class net.jakartaee.tools.netdoc.detectors.SpringServiceDetector$mappingPREFIX",
+					"params": null,
+					"method": null
+				}
+			]
+		}
+	]
